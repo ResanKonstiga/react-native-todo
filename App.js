@@ -7,20 +7,25 @@ import Form from "./components/Form";
 import TaskList from "./components/TaskList";
 
 export default function App() {
-  const [taskList, setTaskList] = useState([]);
   const [input, setInput] = useState("");
+  const [taskList, setTaskList] = useState([]);
 
   const onChange = (input) => {
     setInput(input);
   };
+
   const addHandler = (input) => {
-    setInput('');
-    setTaskList((list) => {
-      return [
-        { text: input, key: Math.random().toString(36).substring(7) },
-        ...list,
-      ];
-    });
+    if (input.length > 0) {
+      setInput("");
+      setTaskList((list) => {
+        return [
+          { text: input, key: Math.random().toString(36).substring(7) },
+          ...list,
+        ];
+      });
+    } else {
+      Alert.alert('Enter your task!')
+    }
   };
 
   const deleteHandler = (key) => {
