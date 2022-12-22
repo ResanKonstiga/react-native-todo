@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View, Text, FlatList } from "react-native";
 
 import Header from "./components/Header";
+import Form from "./components/Form";
 import TaskList from "./components/TaskList";
 
 export default function App() {
@@ -24,9 +25,16 @@ export default function App() {
     },
   ]);
 
+  const addHandler = (input) => {
+    setTaskList((list) => {
+      return [{ text: input, index: 5 }, ...list];
+    });
+  };
+
   return (
     <View>
       <Header />
+      <Form addHandler={addHandler} />
       <View>
         <FlatList
           data={taskList}
