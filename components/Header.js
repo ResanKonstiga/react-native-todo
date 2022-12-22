@@ -1,23 +1,29 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Image } from "react-native";
 
 export default function Header() {
   return (
     <View style={styles.main}>
-      <Text style={styles.text}>ToDo List</Text>
+      <Image style={styles.logo} source={require("../assets/logo.png")} />
+      <Text style={styles.text}>ToDo</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   main: {
-    paddingTop: 65,
+    marginTop: 25,
     height: 100,
-    backgroundColor: "silver",
+    alignItems: 'center',
+  },
+  logo: {
+    width: 40,
+    height: 40,
   },
   text: {
-    fontSize: 18,
-    color: "red",
-    textAlign: 'center',
+    marginTop: 10,
+    fontSize: 20,
+    color: "white",
+    textAlign: "center",
   },
 });

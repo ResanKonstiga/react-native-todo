@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "first-native-app",
-    "slug": "first-native-app",
+    "name": "todo-react-native-app",
+    "slug": "todo-react-native-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

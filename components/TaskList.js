@@ -1,23 +1,25 @@
 import React from "react";
-import { StyleSheet, TouchableHighlight, Text } from "react-native";
+import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
-export default function TaskList({ el }) {
+export default function TaskList({ el, deleteHandler }) {
   return (
-    <TouchableHighlight>
+    <TouchableOpacity onPress={() => deleteHandler(el.key)}>
       <Text style={styles.text}>{el.text}</Text>
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   text: {
+    fontSize: 20,
+    color: 'white',
+    justifyContent: "center",
     padding: 20,
-    textAlign: "center",
-    borderRadius: 5,
-    backgroundColor: 'white',
+    textAlign: "left",
+    borderRadius: 8,
     borderWidth: 1,
-    marginTop: 20,
-    width: '60%',
-    marginLeft: '20%',
-  }
+    marginTop: 10,
+    width: "80%",
+    marginLeft: "10%",
+  },
 });
